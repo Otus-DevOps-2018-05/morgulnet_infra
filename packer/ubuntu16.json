@@ -5,10 +5,10 @@
             "project_id": "big-lamp-205912",
             "image_name": "reddit-base-{{timestamp}}",
             "image_family": "reddit-base",
-            "source_image_family": "ubuntu-1604-lts",
+            "source_image_family": "reddit-base-1529865288",
             "zone": "europe-north1-a",
             "ssh_username": "appuser",
-            "machine_type": "f1-micro"
+            "machine_type": "g1-small"
         }
     ],
     "provisioners": [
