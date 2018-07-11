@@ -6,7 +6,7 @@
         "disk_size": "10",
         "disk_type": "pd-standart",
         "tags": "http-server, https-server, puma-server",
-        "network": "default",
+        "network": "default"
         },
 
     "builders": [
@@ -21,7 +21,7 @@
         	"disk_type": "{{user `disk_type`}}",
             "ssh_username": "appuser",
             "machine_type": "{{user `machine_type`}}",
-            "tags": "{{user `tags`}}",
+            "tags": "{{user `tags`}}"
         }
     ],
     "provisioners": [
