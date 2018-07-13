@@ -20,3 +20,7 @@
  Команды gcloud для использования startup.sh  
  --metadata-from-file startup-script=startup_script.sh  
  --metadata startup-script-url=gs://cloudapp-mo/startup_script.sh
+
+## Информация ДЗ-5
+С помощью packer создан образ reddit-full  
+создан скрипт create-reddit-vm.sh
