@@ -4,11 +4,15 @@ variable project {
 
 variable region {
   description = "Region"
-  default     = "europe-west1"
+  default     = "europe-north1"
 }
 
 variable public_key_path {
   description = " SSH pub key path"
+}
+
+variable "zones" {
+  default = "europe-north1-a"
 }
 
 variable disk_image {
