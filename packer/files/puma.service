@@ -1,0 +1,7 @@
+[Unit]
+Description=Puma server
+[Service]
+WorkingDirectory=/home/morgul/reddit
+ExecStart=/usr/local/bin/puma
+[Install]
+WantedBy=multi-user.target
