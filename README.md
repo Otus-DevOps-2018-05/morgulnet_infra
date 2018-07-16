@@ -1,6 +1,7 @@
 # morgulnet_infra
 
 ## Задание для подключение к someinternalhost в одну команду
+
  Добавляем в .ssh/config  
  Host bastion  
  HostName 35.228.161.210  
@@ -11,6 +12,7 @@
  someinternalhost_IP = 10.142.0.2  
 
 ## Информация о ДЗ-4
+
  testapp_IP = 35.228.217.1  
  testapp_port = 9292  
 
@@ -21,18 +23,20 @@
  --metadata-from-file startup-script=startup_script.sh  
  --metadata startup-script-url=gs://cloudapp-mo/startup_script.sh  
 
-## Информация ДЗ-5
-* С помощью packer создан образ reddit-full
-* создан скрипт create-reddit-vm.sh  
+## Информация ДЗ-5  
+
+ С помощью packer создан образ reddit-full
+ создан скрипт create-reddit-vm.sh  
 
 ## Информация ДЗ-6
-* Основное задание  
+
+ Основное задание  
  Определена input переменная для приватного ключа, использующегося в определении подключения для провижинеров  
  Определена input переменная для задания зоны в ресурсе "google_compute_instance" "app".  
  Отформатированы все конфигурационные файлы используя команду terraform fmt  
  Создан terraform.tfvars.example  
 
-* Задание со *
+ Задание со *
  Добавлены несколько ssh ключей в метаданные проекта  
  Вручную добавлен ssh ключ appuser_web
  После выполнения terraform apply ключ appuser_web удаляеться  
