@@ -1,5 +1,5 @@
-public_key_path_morgul = \"~/.ssh/appuser.pub"\n
-project = \"your_project_id"\n
-public_key_path = \"~/.ssh/appuser.pub"\n
-private_key_path = \"~/.ssh/appuser"\n
-disk_image = \"reddit-base"\n
+public_key_path_morgul = "~/.ssh/appuser.pub"
+project = "your_project_id"
+public_key_path = "~/.ssh/appuser.pub"
+private_key_path = "~/.ssh/appuser"
+disk_image = "reddit-base"

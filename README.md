@@ -22,8 +22,8 @@
  --metadata startup-script-url=gs://cloudapp-mo/startup_script.sh  
 
 ## Информация ДЗ-5
-* С помощью packer создан образ reddit-full  
-* создан скрипт create-reddit-vm.sh
+* С помощью packer создан образ reddit-full
+* создан скрипт create-reddit-vm.sh  
 
 ## Информация ДЗ-6
 * Основное задание  
