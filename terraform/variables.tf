@@ -11,10 +11,6 @@ variable public_key_path {
   description = " SSH pub key path"
 }
 
-variable public_key_path_morgul {
-  description = " SSH pub key path morgul"
-}
-
 variable private_key_path {
   description = " SSH key path"
 }
