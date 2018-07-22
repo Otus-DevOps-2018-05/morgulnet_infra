@@ -1,36 +1,30 @@
-resource "google_compute_instance_group" "instance-group-app" {
-  name = "instance-group-app"
+resource "google_compute_target_pool" "default" {
+  name = "instance-pool"
 
   instances = [
-    "${google_compute_instance.reddit-app.self_link}",
+    "europe-west1-b/reddit-app",
+    "europe-west1-b/reddit-app2",
   ]
 
-  zone = "${var.zones}"
+  health_checks = [
+    "${google_compute_http_health_check.default.name}",
+  ]
 }
 
-resource "google_compute_forwarding_rule" "my-int-lb-forwarding-rule" {
-  name                  = "my-int-lb-forwarding-rule"
-  load_balancing_scheme = "INTERNAL"
-  ports                 = ["9292"]
-  backend_service       = "${google_compute_region_backend_service.backend-service.self_link}"
-}
-
-resource "google_compute_health_check" "health-check" {
-  name = "health-check"
-
-  timeout_sec        = 1
+resource "google_compute_http_health_check" "default" {
+  name               = "default"
   check_interval_sec = 1
-
-  tcp_health_check {
-    port = "9292"
-  }
+  timeout_sec        = 1
+  port               = "9292"
 }
 
-resource "google_compute_region_backend_service" "backend-service" {
-  name          = "backend-service"
-  health_checks = ["${google_compute_health_check.health-check.self_link}"]
+resource "google_compute_forwarding_rule" "default" {
+  name                  = "default-fw"
+  target                = "${google_compute_target_pool.default.self_link}"
+  load_balancing_scheme = "EXTERNAL"
+  port_range            = "9292"
+}
 
-  backend {
-    group = "${google_compute_instance_group.instance-group-app.self_link}"
-  }
+resource "google_compute_global_address" "external-address" {
+  name = "external-address"
 }
