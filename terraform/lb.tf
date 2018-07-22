@@ -2,8 +2,7 @@ resource "google_compute_target_pool" "default" {
   name = "instance-pool"
 
   instances = [
-    "europe-west1-b/reddit-app",
-    "europe-west1-b/reddit-app2",
+    "${google_compute_instance.reddit-app.*.self_link}",
   ]
 
   health_checks = [

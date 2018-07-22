@@ -22,3 +22,8 @@ variable "zones" {
 variable disk_image {
   description = "Disk image"
 }
+
+variable vm_count {
+  description = "Count of VM"
+  default     = 2
+}
