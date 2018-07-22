@@ -4,7 +4,7 @@ provider "google" {
   region  = "${var.region}"
 }
 
-resource "google_compute_instance" "app" {
+resource "google_compute_instance" "reddit-app" {
   name         = "reddit-app"
   machine_type = "g1-small"
   zone         = "${var.zones}"
