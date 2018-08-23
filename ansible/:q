@@ -1,2 +1,0 @@
-#!/bin/bash
-echo "{"; gcloud compute instances list | tail -n +2 |  awk '{print "\""$4"\","}' ; echo "}"
