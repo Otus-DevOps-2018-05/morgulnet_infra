@@ -33,28 +33,9 @@ resource "google_compute_firewall" "firewall_puma" {
 
   allow {
     protocol = "tcp"
-    ports    = ["9292"]
+    ports    = ["9292", "80"]
   }
 
   source_ranges = ["0.0.0.0/0"]
   target_tags   = ["reddit-app"]
-}
-
-resource "null_resource" "provisioners" {
-
-  connection {
-    type        = "ssh"
-    user        = "appuser"
-    agent       = false
-    private_key = "${file(var.private_key_path)}"
-  }
-
-  provisioner "file" {
-    source      = "${path.module}/files/puma.service"
-    destination = "/tmp/puma.service"
-  }
-
-  provisioner "remote-exec" {
-    script = "${path.module}/files/deploy.sh"
-  }
 }
