@@ -1,6 +1,8 @@
 ---
 - name: Configure App
   hosts: app
+  # Динамическое инвентори
+  # hosts: reddit-app
   become: true
   roles:
     - app
