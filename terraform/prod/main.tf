@@ -5,11 +5,12 @@ provider "google" {
 }
 
 module "app" {
-  source          = "../modules/app"
-  public_key_path = "${var.public_key_path}"
+  source           = "../modules/app"
+  public_key_path  = "${var.public_key_path}"
+  public_2key_path = "${var.public_2key_path}"
   private_key_path = "${var.private_key_path}"
-  zone            = "${var.zone}"
-  app_disk_image  = "${var.app_disk_image}"
+  zone             = "${var.zone}"
+  app_disk_image   = "${var.app_disk_image}"
 }
 
 module "db" {
