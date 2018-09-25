@@ -1,0 +1,8 @@
+---
+- name: Configure MongoDB
+  hosts: db
+  # Динамическое инвентори
+  # hosts: reddit-db
+  become: true
+  roles:
+     - db

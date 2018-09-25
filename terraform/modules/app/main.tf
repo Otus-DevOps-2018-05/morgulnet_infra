@@ -33,15 +33,9 @@ resource "google_compute_firewall" "firewall_puma" {
 
   allow {
     protocol = "tcp"
-    ports    = ["9292"]
+    ports    = ["9292", "80"]
   }
 
   source_ranges = ["0.0.0.0/0"]
   target_tags   = ["reddit-app"]
-}
-
-resource "google_compute_project_metadata" "default" {
-  metadata {
-    ssh-keys = "appuser1:${file(var.public_key_path)} appuser2:${file(var.public_2key_path)}"
-  }
 }
