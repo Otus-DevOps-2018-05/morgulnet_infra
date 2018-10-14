@@ -6,4 +6,4 @@
   become: true
   roles:
     - app
-    - role: jdauphant.nginx
+    - jdauphant.nginx
